@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>圆环</title>
+<style>
+*{margin:0; padding:0;}
+</style>
+</head>
+<body>
+<canvas id="wrap-canvas"></canvas>
+<script>
+var canvas = document.getElementById('wrap-canvas');
+canvas.width=500;
+canvas.height=500;
+    var context = canvas.getContext('2d'),
+        centerX = canvas.width/2,
+        centerY = canvas.height/2,
+        rad = Math.PI*2/100,//将一个圆分成100份
+        speed = 0.1;
+
+    function text(n){
+        context.save();
+        context.fillStyle = "#492516";
+        context.font = "40px Arial";
+        context.textAlign = "center";
+        context.textBaseline = "middle";
+        context.fillText(n.toFixed(0)+"%", centerX, centerY);
+        context.restore();
+    }
+    function blueCircle(n){
+        context.save();
+        context.beginPath();
+        context.strokeStyle = "#ff0000";
+        context.lineWidth = 12;
+        context.arc(centerX, centerY, 100 , -Math.PI/2, -Math.PI/2 + n*rad, false);
+        context.stroke();
+        context.restore();
+    }
+
+    function redCircle(){
+        context.save();
+        context.beginPath();
+        context.strokeStyle = "#000";
+        context.lineWidth = 12;
+        context.arc(centerX, centerY, 100 , Math.PI/3, Math.PI*7/3, false);
+        context.stroke();
+        context.closePath();
+        context.restore();
+    }
+	
+	/*
+    (function drawFrame(){
+        window.requestAnimationFrame(drawFrame);
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        redCircle();
+        text(speed);
+        blueCircle(speed);
+
+        if(speed > 100) speed = 0;
+        speed += 0.1;
+    }());
+	*/
+	/*
+	(function drawFrame(){
+		if(speed<=100){
+			window.requestAnimationFrame(drawFrame);
+		}
+        console.log("speed========",speed);
+        context.clearRect(0, 0, canvas.width, canvas.height);//擦除每一次绘制，否则会累积，尤其是数字会叠加
+
+        //redCircle();//先一次性画底层的圆
+        text(speed);//文本切换
+        blueCircle(speed);
+        speed += 0.1;
+    }());
+	*/
+	redCircle()
+</script>
+</body>
+</html>
