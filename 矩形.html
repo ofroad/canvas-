@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>矩形</title>
+<style>
+*{margin:0; padding:0;}
+</style>
+</head>
+<body>
+<canvas id="wrap-canvas"></canvas>
+<script>
+var canvas=document.getElementById("wrap-canvas"),
+	context=canvas.getContext("2d");
+console.log(context);
+canvas.width=500;
+canvas.height=500;
+
+context.fillStyle = '#ff0000';
+context.fillRect(150, 150, 200, 100);
+context.strokeRect(10,10,100,100);//用来绘制空心矩形
+//context.clearRect(10,10,150,150); 
+</script>
+</body>
+</html>

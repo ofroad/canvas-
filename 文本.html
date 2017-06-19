@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>文本</title>
+<style>
+*{margin:0; padding:0;}
+</style>
+</head>
+<body>
+<canvas id="wrap-canvas"></canvas>
+<script>
+var canvas=document.getElementById("wrap-canvas"),
+	context=canvas.getContext("2d");
+console.log(context);
+canvas.width=500;
+canvas.height=500;
+
+context.font = "Bold 50px Arial"; // 设置字体
+context.textAlign = "left";// 设置对齐方式
+context.fillStyle = "#000"; // 设置填充颜色
+context.fillText("Hello!", 10, 50); // 设置字体内容，以及在画布上的位置
+context.strokeText("Hello!", 10, 150); // 绘制空心字
+</script>
+</body>
+</html>

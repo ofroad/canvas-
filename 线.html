@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>线</title>
+<style>
+*{margin:0; padding:0;}
+</style>
+</head>
+<body>
+<canvas id="wrap-canvas"></canvas>
+<script>
+var canvas=document.getElementById("wrap-canvas"),
+	context=canvas.getContext("2d");
+console.log(context);
+canvas.width=500;
+canvas.height=500;
+
+context.beginPath(); // 开始路径绘制
+context.moveTo(40, 60); // 设置路径起点，坐标为(20,20)
+context.lineTo(200, 60); // 绘制一条到(200,20)的直线
+context.lineTo(300, 160);
+context.lineWidth = 1.0; // 设置线宽
+context.strokeStyle = '#CC0000'; // 设置线的颜色
+context.stroke(); // 进行线的着色，这时整条线才变得可见
+</script>
+</body>
+</html>

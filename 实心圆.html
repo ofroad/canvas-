@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>实心圆</title>
+<style>
+*{margin:0; padding:0;}
+</style>
+</head>
+<body>
+<canvas id="wrap-canvas"></canvas>
+<script>
+var canvas=document.getElementById("wrap-canvas"),
+	context=canvas.getContext("2d");
+console.log(context);
+canvas.width=500;
+canvas.height=500;
+
+context.beginPath(); 
+context.arc(60, 60, 50, 0, Math.PI*2, true); 
+context.fillStyle = "#000000"; 
+context.fill();
+</script>
+</body>
+</html>

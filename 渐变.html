@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>渐变</title>
+<style>
+*{margin:0; padding:0;}
+</style>
+</head>
+<body>
+<canvas id="wrap-canvas"></canvas>
+<script>
+var canvas=document.getElementById("wrap-canvas"),
+	context=canvas.getContext("2d");
+console.log(context);
+canvas.width=500;
+canvas.height=500;
+var myGradient = context.createLinearGradient(0, 0, 0, 180); 
+myGradient.addColorStop(0, "#BABABA"); 
+myGradient.addColorStop(1, "#ff0900");
+
+context.fillStyle = myGradient;//填充渐变色
+context.fillRect(10,10,200,200);
+</script>
+</body>
+</html>

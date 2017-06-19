@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>像素处理</title>
+<style>
+*{margin:0; padding:0;}
+</style>
+</head>
+<body>
+<canvas id="wrap-canvas"></canvas>
+<script>
+var canvas=document.getElementById("wrap-canvas"),
+	context=canvas.getContext("2d");
+console.log(context);
+canvas.width=500;
+canvas.height=500;
+/*
+context.shadowOffsetX = 30; // 设置水平位移
+context.shadowOffsetY = 10; // 设置垂直位移
+context.shadowBlur = 5; // 设置模糊度
+context.shadowColor = "rgba(0,0,0,0.2)"; // 设置阴影颜色
+*/
+context.fillStyle = "#ff0000"; 
+context.fillRect(0,0,200,110);
+
+var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+console.log("======imageData=====");
+console.log(imageData.data.length)
+console.log(imageData)
+console.log(imageData.data)
+
+</script>
+</body>
+</html>

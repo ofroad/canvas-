@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>空心圆</title>
+<style>
+*{margin:0; padding:0;}
+</style>
+</head>
+<body>
+<canvas id="wrap-canvas"></canvas>
+<script>
+var canvas=document.getElementById("wrap-canvas"),
+	context=canvas.getContext("2d");
+console.log(context);
+canvas.width=500;
+canvas.height=500;
+
+context.beginPath(); 
+context.arc(60, 60, 50, 0, Math.PI*0.5, false); 
+context.lineWidth = 1.0; 
+context.strokeStyle = "#ff0000"; 
+context.stroke();
+</script>
+</body>
+</html>

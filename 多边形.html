@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>多边形</title>
+<style>
+*{margin:0; padding:0;}
+</style>
+</head>
+<body>
+<canvas id="wrap-canvas"></canvas>
+<script>
+var canvas=document.getElementById("wrap-canvas"),
+	context=canvas.getContext("2d");
+console.log(context);
+canvas.width=500;
+canvas.height=500;
+
+context.fillStyle="rgb(2,100,30)";//颜色
+context.moveTo(100,100);//表示画笔的起点坐标
+context.lineTo(700,700);//表示下一笔的坐标
+context.lineTo(1000,700);//表示下一笔的坐标
+context.fill();
+
+
+</script>
+</body>
+</html>
