@@ -28,17 +28,8 @@ canvas.height=500;
         context.fillText(n.toFixed(0)+"%", centerX, centerY);
         context.restore();
     }
-    function blueCircle(n){
-        context.save();
-        context.beginPath();
-        context.strokeStyle = "#ff0000";
-        context.lineWidth = 12;
-        context.arc(centerX, centerY, 100 , -Math.PI/2, -Math.PI/2 + n*rad, false);
-        context.stroke();
-        context.restore();
-    }
-
-    function redCircle(){
+  
+    function blackCircle(){
         context.save();
         context.beginPath();
         context.strokeStyle = "#000";
@@ -49,6 +40,15 @@ canvas.height=500;
         context.restore();
     }
 	
+	function redCircle(n){
+        context.save();
+        context.beginPath();
+        context.strokeStyle = "#ff0000";
+        context.lineWidth = 12;
+        context.arc(centerX, centerY, 100 , -Math.PI/2, -Math.PI/2 + n*rad, false);
+        context.stroke();
+        context.restore();
+    }
 	/*
     (function drawFrame(){
         window.requestAnimationFrame(drawFrame);
@@ -70,9 +70,9 @@ canvas.height=500;
         console.log("speed========",speed);
         context.clearRect(0, 0, canvas.width, canvas.height);//擦除每一次绘制，否则会累积，尤其是数字会叠加
 
-        redCircle();//先一次性画底层的圆
+        blackCircle();//先一次性画底层的圆
         text(speed);//文本切换
-        blueCircle(speed);
+        redCircle(speed);
         speed += 0.1;
     }());
 	

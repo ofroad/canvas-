@@ -9,7 +9,7 @@
   <canvas id="canvas" width="300" height="300"></canvas>
 
   <script>
-    draw(66);
+    draw(66,Math.PI);
     /**
      * [顺时针方向画图，起始点在左侧]
      * @param  {[number]} percent [所占的进度百分比，比如66%，则传66即可，0 <= percent <= 100]
@@ -31,7 +31,7 @@
           coverColor = '#fe4d43',
           PI = Math.PI,
           sR = sR || 1/2 * PI; // 默认圆弧的起始点弧度为π/2
-
+		console.log(sR)
       var finalRadian = sR + ((PI + (PI - sR) * 2) * percent / 100); // 红圈的终点弧度
       var step = (PI + (PI - sR) * 2)/100; // 一个1%对应的弧度大小
       var text = 0; // 显示的数字
@@ -41,14 +41,14 @@
         // 画灰色圆弧
         drawCanvas(cWidth/2, cHeight/2, 80, sR, sR + (PI + (PI - sR) * 2), baseColor, 2);
         // 画红色圆弧
-        //drawCanvas(cWidth/2, cHeight/2, 80, sR, endRadian, coverColor, 2);
+        drawCanvas(cWidth/2, cHeight/2, 80, sR, endRadian, coverColor, 2);
 
         // 画红色圆头
         // 红色圆头其实就是一个圆，关键的是找到其圆心，涉及到三角函数知识，自己画个图一看就明了
         var angle = 2*PI - endRadian; // 转换成逆时针方向的弧度（三角函数中的）
         xPos = Math.cos(angle) * 80 + cWidth/2; // 红色圆 圆心的x坐标
         yPos = -Math.sin(angle) * 80 + cHeight/2; // 红色圆 圆心的y坐标
-        drawCanvas(xPos, yPos, 2, 0, 2*PI, coverColor, 2);
+        //drawCanvas(xPos, yPos, 2, 0, 2*PI, coverColor, 2);
 
         // 数字
         cxt.fillStyle = coverColor;
